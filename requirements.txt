@@ -1,2 +1,4 @@
 nicegui==1.4.5
 pywebview==4.4.1
+chatterbot @ git+https://github.com/blastbeng/ChatterBot@master
+spacy==3.7.2
