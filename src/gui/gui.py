@@ -4,17 +4,14 @@ import webview
 import socket
 import sys
 import threading
-#import pyi_splash
+import pyi_splash
 
 with socket.socket() as s:
     s.bind(('',0))
     openport=s.getsockname()[1]
-
-
-#NiceGui
+    
+#NiceGUI
 ################
-
-
 @ui.page('/')
 def main():
 
@@ -38,7 +35,7 @@ def main():
         text.value = ''
         chat_messages.refresh()
 
-        #response = await llm.arun(message, callbacks=[NiceGuiLogElementCallbackHandler(log)])
+        #response = await 
         messages.append(('Pitonescu', response))
         thinking = False
         chat_messages.refresh()
@@ -63,5 +60,9 @@ def main():
                 .classes('w-full self-center').on('keydown.enter', send)
 
 ################
+
+#NiceGUI 
+ui.title('Capitanul Pitonescu')
 #app.on_startup(lambda: pyi_splash.close())
-ui.run(native=True, reload=False, port=openport)
+def start():
+    ui.run(native=True, reload=False, port=openport)
