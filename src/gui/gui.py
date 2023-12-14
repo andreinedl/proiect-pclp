@@ -6,6 +6,11 @@ import sys
 import threading
 import pyi_splash
 
+#Import chatbot function
+sys.path.append("..")
+from ai.chat import getResponse
+
+
 with socket.socket() as s:
     s.bind(('',0))
     openport=s.getsockname()[1]
@@ -21,7 +26,7 @@ def main():
     @ui.refreshable
     def chat_messages() -> None:
         for name, text in messages:
-            ui.chat_message(text=text, name=name, sent=name == 'You')
+            ui.chat_message(text=text, name=name, sent=name == 'Utilizator')
         if thinking:
             ui.spinner(size='5rem').classes('self-center')
         if context.get_client().has_socket_connection:
@@ -35,7 +40,7 @@ def main():
         text.value = ''
         chat_messages.refresh()
 
-        #response = await 
+        response = await getResponse(message)
         messages.append(('Pitonescu', response))
         thinking = False
         chat_messages.refresh()
@@ -61,8 +66,6 @@ def main():
 
 ################
 
-#NiceGUI 
-ui.title('Capitanul Pitonescu')
-#app.on_startup(lambda: pyi_splash.close())
+app.on_startup(lambda: pyi_splash.close())
 def start():
-    ui.run(native=True, reload=False, port=openport)
+    ui.run(native=True, reload=False, port=openport, title='Capitanul Pitonescu')

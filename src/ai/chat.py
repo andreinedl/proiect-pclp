@@ -1,6 +1,7 @@
 from chatterbot import ChatBot, storage, corpus
 from chatterbot.trainers import ListTrainer, ChatterBotCorpusTrainer
 from pathlib import Path, PurePosixPath
+import asyncio
 import os
 chatbot = ChatBot('Capitanul Pitonescu', 
         storage_adapter='chatterbot.storage.SQLStorageAdapter',
@@ -24,9 +25,10 @@ def runStandalone():
         question = input("Intrebare: ")
         response = chatbot.get_response(question)
         print(response)
-    
-def getResponse(question):
-    response = chatbot.get_response(question)
+
+async def getResponse(question):
+    await asyncio.sleep(1)
+    response = f"{chatbot.get_response(question)}"
     return response
     
 #doTrain()
