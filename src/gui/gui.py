@@ -10,9 +10,9 @@ with socket.socket() as s:
     openport=s.getsockname()[1]
 
 #NiceGUI 
-ui.label('Hello NiceGUI!')
-ui.button('Click me', on_click=lambda: ui.notify('Button clicked!'))
+ui.title('Capitanul Pitonescu')
 
 #app.on_startup(lambda: pyi_splash.close())
 
-ui.run(native=True, reload=False, port=openport)
+def start():
+    ui.run(native=True, reload=False, port=openport)
