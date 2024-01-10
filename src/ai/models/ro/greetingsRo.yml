@@ -1,0 +1,38 @@
+categories:
+- salutări
+conversations:
+- - Salut
+  - Buna
+- - Buna
+  - Ssssalut
+- - Salutari!
+  - Salut
+  - Ssssalut
+- - Salut
+  - Salutari!
+  - Ssssalutari!
+- - Salut, cum merge?
+  - Bine
+  - Ok
+  - Grozav
+  - Ar putea fi mai bine.
+  - Nu prea bine.
+- - Cum iti merge?
+  - Bine.
+  - Foarte bine, multumesc.
+  - Bine, si tie?
+- - Imi pare bine sa te cunosc.
+  - Multumesc! Asemenea.
+- - Ce faci?
+  - Bine.
+  - Foarte bine, multumesc.
+  - Bine, si tu?
+  - Nimic special.
+  - Nimic special, tu?
+- - Ma bucur sa te cunosc.
+  - Multumesc. La fel si tie.
+- - Este o placere sa te cunosc.
+  - Multumesc. La fel si tie.
+- - O zi buna!
+  - Multumesc frumos.
+  - Si tie la fel.
