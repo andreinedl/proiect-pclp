@@ -1,0 +1,50 @@
+
+categories:
+- calculatoare
+conversations:
+- - Ce este un computer?
+  - Un computer este un dispozitiv electronic care preia informații în formă digitală și efectuează o serie de operații pe baza unor instrucțiuni predefinite pentru a oferi un anumit rezultat.
+  - Lucrul pe care îl folosești pentru a vorbi cu mine este un computer.
+  - Un dispozitiv electronic capabil să efectueze calcule la viteze foarte mari și cu o precizie foarte mare.
+  - Un dispozitiv care mapează un set de numere pe alt set de numere.
+- - Ce este un supercomputer?
+  - Calculatoarele care pot efectua un număr foarte mare de calcule la viteze foarte mari și cu precizie sunt numite supercomputere.
+  - Un supercomputer este un computer care funcționează la câteva ordine de mărime mai mare viteză și capacitate decât calculatoarele generale de uz zilnic, cum ar fi cel pe care vorbești cu mine.
+  - Știi, “big iron”!
+- - Cine a inventat calculatoarele?
+  - Este puțin ambiguu, dar savantul britanic Charles Babbage este considerat tatăl calculatoarelor.
+  - Unii ar putea argumenta că John von Neumann a inventat calculatoarele așa cum le cunoaștem noi, deoarece a inventat arhitectura Princeton, în care instrucțiunile și datele împărtășesc același câmp de memorie, dar sunt diferențiate prin context.
+- - Care a fost primul calculator?
+  - Este greu de spus, dar ENIAC este considerat primul calculator “real”. A fost dezvoltat la Universitatea din Pennsylvania în 1946.
+  - Ai putea spune că primul calculator primitiv a fost Jaquard Loom, care era un război programabil care folosea carduri perforate pentru a stoca modelele pe care le făcea. Acest lucru l-a făcut un dispozitiv mecanic reprogramabil.
+- - Ce este un microprocesor?
+  - Un circuit integrat care implementează funcțiile unei unități centrale de procesare a unui computer.
+  - Un circuit foarte mic care stochează instrucțiuni și efectuează calcule pentru calculator.
+  - Inima calculatorului, pe scurt.
+  - Creierul calculatorului, pe scurt.
+  - Un component electronic în care toate părțile fac parte dintr-un cip de siliciu contiguu, în loc de componente discrete montate pe o placă de circuit mai mare.
+- - Ce este un sistem de operare?
+  - Software-ul care coordonează între hardware și alte părți ale computerului pentru a rula alte software-uri se numește sistem de operare, sau SO.
+  - Windows, MacOS, Linux, UNIX… toate sunt tipuri de sisteme de operare.
+  - Android și iOS sunt sisteme de operare pentru dispozitive mobile.
+  - Software-ul care implementează funcțiile de bază ale unui computer, cum ar fi accesul la memorie, procesele și accesul la periferice.
+- - Care este mai bun, Windows sau macOS?
+  - Depinde de mașina pe care o folosești pentru a vorbi cu mine!
+  - Aș prefera să nu-ți rănesc sentimentele.
+  - Linux, întotdeauna Linux!
+  - La ce încerci să ajungi? Sistemul de operare ar trebui să susțină obiectivele tale.
+- - Numește o companie de calculatoare.
+  - Te referi la hardware sau software?
+  - Apple produce hardware și software pentru a rula pe acesta. Microsoft produce doar sisteme de operare. HP produce doar calculatoare. Acestea sunt doar câteva nume printre câteva sute de altele.
+- - Cine folosește supercomputere?
+  - Orice persoană care dorește să lucreze cu numere mari rapid și cu o precizie ridicată.
+  - Orice persoană care trebuie să lucreze cu seturi foarte, foarte mari de date în perioade mult mai scurte de timp decât este fezabil cu sistemele de calculatoare mai comune.
+  - Supercomputerele sunt utilizate în general de către oamenii de știință și cercetătorii.
+  - Pariez că departamentul MET le folosește.
+  - Cu siguranță poți găsi câteva la NASA.
+- - Cum funcționează un calculator?
+  - Calculatoarele sunt foarte proaste. Ele execută doar instrucțiunile date de oameni.
+  - Calculatoarele fac tot ce li se cere prin efectuarea unui număr mare de operații matematice de bază foarte rapid în secvență.
+  - Calculatoarele efectuează un număr foarte mare de calcule pentru a obține un rezultat.
+  - La fel ca orice altceva, totul se reduce la matematică!
+
