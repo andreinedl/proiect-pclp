@@ -4,7 +4,7 @@ import webview
 import socket
 import sys
 import threading
-import pyi_splash
+#import pyi_splash
 
 #Import chatbot function
 sys.path.append("..")
