@@ -32,7 +32,6 @@ def main():
 
     # Functie pentru apelarea functiei getResponse din modulul AI + adaugare mesaje
     async def send() -> None:
-    
         message = text.value
         messages.append(('Utilizator', text.value))
         thinking = True
@@ -43,15 +42,19 @@ def main():
         messages.append(('Pitonescu', response))
         thinking = False
         chat_messages.refresh()
-    
+            
     #Includere jQuery
     ui.add_body_html('<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>')
-    ui.dark_mode(True) # Activare dark mode by default
+    
+    #Setare Dark Mode ca default
+    darkMode = ui.dark_mode()
+    darkMode.enable()
             
     with ui.splitter(limits=[10, 10], value=10).classes('w-full h-full fixed') as splitter:
         with splitter.before:
             with ui.tabs().props('vertical') as tabs:
                 chat = ui.tab('Chat', icon='chat')
+            ui.button(icon='light_mode', on_click=lambda: darkMode.toggle()).classes('mb-8')
         with splitter.after:
             with ui.tab_panels(tabs, value=chat).props('vertical').classes('w-full items-stretch flex-grow'):
                 with ui.tab_panel(chat).classes('items-stretch'):
