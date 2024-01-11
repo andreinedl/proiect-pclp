@@ -69,6 +69,9 @@ def main():
                         with ui.row().classes('w-full border-r-8 border-transparent'):
                             placeholder = 'Introdu mesajul...'
                             text = ui.input(placeholder=placeholder).props('rounded outlined input-class=mx-3').classes('w-full self-center border-b-8 border-transparent').on('keydown.enter', send)
+                            with text as input:
+                                ui.button(icon='send', on_click=send).classes('self-center btn_size_round_2')
+                            
 
                 
 def start():
