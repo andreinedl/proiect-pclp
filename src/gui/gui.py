@@ -16,32 +16,34 @@ with socket.socket() as s:
     openport=s.getsockname()[1]
 
     messages: List[Tuple[str, str]] = []
-    thinking: bool = False
-    
-    ui.query('.nicegui-content').classes('w-full')    
+    ui.query('.nicegui-content').classes('w-full')
+
 
 ## GUI ##
 @ui.page('/')
 def main():
     @ui.refreshable    
     def chat_messages() -> None:
+       # messages.append(('Capitanul Pitonescu', 'Salut, sunt Capitanul Pitonescu! Cum te pot ajuta?'))
+        
         for name, text in messages:
             ui.chat_message(text=text, name=name, sent=name == 'Utilizator').classes('m-4')
         if context.get_client().has_socket_connection:
-            ui.run_javascript("$('#c10').animate({scrollTop: $('#c10').get(0).scrollHeight}, 2000);") ## Se foloseste de jQuery, id-ul div-ului pt chat fiind c10 
+            ui.run_javascript("$('#c11').animate({scrollTop: $('#c10').get(0).scrollHeight}, 2000);") ## Se foloseste de jQuery, id-ul div-ului pt chat fiind c11 
 
     # Functie pentru apelarea functiei getResponse din modulul AI + adaugare mesaje
     async def send() -> None:
-        message = text.value
-        messages.append(('Utilizator', text.value))
-        thinking = True
-        text.value = ''
-        chat_messages.refresh()
+        if(text.value==''):
+            ui.notify('Nu ai introdus niciun mesaj!', type='error')
+        else:
+            message = text.value
+            messages.append(('Utilizator', text.value))
+            text.value = ''
+            chat_messages.refresh()
 
-        response = await getResponse(message)
-        messages.append(('Pitonescu', response))
-        thinking = False
-        chat_messages.refresh()
+            response = await getResponse(message)
+            messages.append(('Pitonescu', response))
+            chat_messages.refresh()
             
     #Includere jQuery
     ui.add_body_html('<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>')
@@ -58,13 +60,13 @@ def main():
         with splitter.after:
             with ui.tab_panels(tabs, value=chat).props('vertical').classes('w-full items-stretch flex-grow'):
                 with ui.tab_panel(chat).classes('items-stretch'):
-                    with ui.column().classes('w-fill h-[90vh] items-stretch flex-grow shrink overflow-y-auto'):
+                    with ui.column().classes('w-fill h-[85vh] items-stretch flex-grow shrink overflow-y-auto'):
                         chat_messages()
-                    with ui.column().classes('w-full h-[10vh]'):
+                    with ui.column().classes('w-full h-[15vh]'):
                         with ui.row().classes('w-full border-r-8 border-transparent'):
                             placeholder = 'Introdu mesajul...'
-                            text = ui.input(placeholder=placeholder).props('rounded outlined input-class=mx-3').classes('w-full self-center').on('keydown.enter', send)
+                            text = ui.input(placeholder=placeholder).props('rounded outlined input-class=mx-3').classes('w-full self-center border-b-8 border-transparent').on('keydown.enter', send)
                 
 def start():
-    #ui.run(native=True, reload=False, port=openport, title='Capitanul Pitonescu') # Native mode - mod window, nu ca webpage
-    ui.run( reload=False, port=8080, title='Capitanul Pitonescu', show=False)
+    ui.run(native=True, reload=False, port=openport, title='Capitanul Pitonescu', window_size=(1200, 600)) # Native mode - mod window, nu ca webpage
+    #ui.run( reload=False, port=8080, title='Capitanul Pitonescu', show=False)
