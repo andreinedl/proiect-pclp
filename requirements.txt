@@ -1,6 +1,5 @@
 nicegui==1.4.5
-pywebview==4.4.1
-chatterbot @ git+https://github.com/blastbeng/ChatterBot@master
-spacy==3.7.2
-nltk==3.8.1
+am_i_connected==0.1.4
 pyinstaller==6.3.0
+openai==0.28
+g4f @ git+https://github.com/xcloudx12345/gpt4free
