@@ -4,7 +4,6 @@ import webview
 import socket
 import sys
 import threading
-#import pyi_splash
 
 #Importare modul AI
 sys.path.append("..")
@@ -16,16 +15,20 @@ with socket.socket() as s:
     openport=s.getsockname()[1]
 
     messages: List[Tuple[str, str]] = []
-    ui.query('.nicegui-content').classes('w-full')
-
+    
+ui.query('.nicegui-content').classes('w-full')
+initialMessage: bool = False #Afisare mesaj initial, fals daca nu a mai fost afisat
 
 ## GUI ##
 @ui.page('/')
 def main():
     @ui.refreshable    
     def chat_messages() -> None:
-       # messages.append(('Capitanul Pitonescu', 'Salut, sunt Capitanul Pitonescu! Cum te pot ajuta?'))
-        
+        global initialMessage
+        if(initialMessage==False):
+            messages.append(('Capitanul Pitonescu', 'Salut, sunt Capitanul Pitonescu! Cum te pot ajuta?'))
+            initialMessage = True
+            
         for name, text in messages:
             ui.chat_message(text=text, name=name, sent=name == 'Utilizator').classes('m-4')
         if context.get_client().has_socket_connection:
@@ -66,7 +69,10 @@ def main():
                         with ui.row().classes('w-full border-r-8 border-transparent'):
                             placeholder = 'Introdu mesajul...'
                             text = ui.input(placeholder=placeholder).props('rounded outlined input-class=mx-3').classes('w-full self-center border-b-8 border-transparent').on('keydown.enter', send)
+                            with text as input:
+                                ui.button(icon='send', on_click=send).classes('self-center btn_size_round_2')
+                            
+
                 
 def start():
     ui.run(native=True, reload=False, port=openport, title='Capitanul Pitonescu', window_size=(1200, 600)) # Native mode - mod window, nu ca webpage
-    #ui.run( reload=False, port=8080, title='Capitanul Pitonescu', show=False)
